@@ -17,7 +17,6 @@ This repository contains the source code for my professional technical portfolio
 * **Zero-Dependency Architecture:** Minimal external requests. No jQuery, no CSS frameworks. Pure Vanilla JS and CSS for maximum efficiency.
 * **Bilingual i18n System:** Custom JavaScript translation logic that dynamically switches between Arabic (RTL) and English (LTR) based on `navigator.language` and saves preferences in `localStorage`.
 * **Dynamic Aesthetics:** Utilizes a CSS mesh background, cursor-tracking hover effects (`cursor-glow`), and staggered scroll-reveal animations using `IntersectionObserver` — avoiding layout shifts (CLS).
-* **AI & Cloud Engineering Focus:** Highlights hands-on experience and architectural approach, demonstrating skills in GCP, Flutter, Docker, and Vertex AI.
 
 ## ⚡ Performance & SEO Optimizations
 
