@@ -68,6 +68,16 @@
             "linux-cust-title": "Linux Customization",
             "linux-cust-desc": "Building KDE Plasma 6 widgets to interact with system-level APIs in Fedora with configuration layer integration.",
 
+            // Services
+            "services-tag": "Engineering Engagements",
+            "services-title": "Available for complex projects & system building.",
+            "srv-1-title": "AI Integration & Pipelines",
+            "srv-1-desc": "Building deterministic workflows using LLMs (Gemini/Vertex AI), and designing Logic Tables to prevent hallucinations for precise data extraction.",
+            "srv-2-title": "Cloud Architecture & DevOps",
+            "srv-2-desc": "Setting up Docker containers, secure CI/CD pipelines via GitHub Actions, and managing GCP infrastructure with strict billing DDoS protection.",
+            "srv-3-title": "Full-Stack Flutter Apps",
+            "srv-3-desc": "Building mobile apps with Clean Architecture, custom UIs, smart data sync with Firebase, and custom Python backend integration.",
+
             // About
             "about-tag": "Approach",
             "about-title": "Expertise is built through breaking and fixing.",
@@ -155,6 +165,16 @@
             "net-auto-desc": "أدوات Python للمصادقة مع أجهزة التوجيه ومراقبة الأجهزة المتصلة لحظياً مع تسجيل تلقائي.",
             "linux-cust-title": "تخصيص لينكس",
             "linux-cust-desc": "بناء ويدجيت لـ KDE Plasma 6 للتعامل مع APIs النظام في Fedora مع تكامل طبقات الضبط.",
+
+            // Services
+            "services-tag": "التعاقد الهندسي",
+            "services-title": "متاح للمشاريع المعقدة وبناء الأنظمة.",
+            "srv-1-title": "دمج الذكاء الاصطناعي (AI Integration)",
+            "srv-1-desc": "بناء مسارات عمل حتمية باستخدام نماذج LLM (Gemini/Vertex AI)، وتصميم جداول منطق (Logic Tables) تمنع الهلوسة لاستخراج بيانات دقيقة.",
+            "srv-2-title": "هندسة السحابة و DevOps",
+            "srv-2-desc": "إعداد حاويات Docker، مسارات CI/CD آمنة عبر GitHub Actions، وإدارة البنية التحتية على GCP مع حماية صارمة ضد هجمات الفواتير (Billing DDoS).",
+            "srv-3-title": "تطبيقات Flutter المتكاملة",
+            "srv-3-desc": "بناء تطبيقات موبايل بمعمارية نظيفة (Clean Architecture)، واجهات مستخدم مخصصة، ومزامنة بيانات ذكية مع Firebase وبناء Backend مخصص (Python).",
 
             // About
             "about-tag": "المنهجية",
