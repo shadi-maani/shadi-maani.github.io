@@ -321,6 +321,15 @@
 
         setLanguage(initialLang);
 
+        // Build email links via JS to prevent Cloudflare email-decode injection
+        var u = 'contact'; var d = 'shadimaani.me';
+        var email = u + '@' + d;
+        var mailto = 'mai' + 'lto:' + email;
+        var contactLink = document.getElementById('contact-email-link');
+        if (contactLink) { contactLink.href = mailto; contactLink.textContent = email; }
+        var footerLink = document.getElementById('footer-email-link');
+        if (footerLink) { footerLink.href = mailto; }
+
         // Language toggle
         var toggleBtn = document.getElementById('lang-toggle');
         if (toggleBtn) {
