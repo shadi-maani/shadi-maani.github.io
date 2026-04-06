@@ -54,6 +54,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     transition: direction 0.3s ease;
+    text-rendering: optimizeSpeed;
 }
 
 html[lang="en"] body {
@@ -125,8 +126,8 @@ img { max-width: 100%; display: block; }
     background: radial-gradient(circle, rgba(56, 189, 248, 0.04), transparent 70%);
     pointer-events: none;
     z-index: 0;
-    transition: transform 0.15s ease;
     will-change: transform;
+    transform: translateZ(0);
 }
 
 /* --- Header / Navbar --- */
@@ -326,6 +327,7 @@ img { max-width: 100%; display: block; }
 /* --- Section Shared --- */
 .section {
     padding-block: 5rem;
+    contain: content;
 }
 
 .section-border-top {
@@ -762,16 +764,14 @@ img { max-width: 100%; display: block; }
     border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* --- Scroll Reveal --- */
+/* --- Scroll Reveal (opacity only — no transform to avoid CLS) --- */
 .reveal {
     opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transition: opacity 0.7s ease;
 }
 
 .reveal.visible {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* ===================================================

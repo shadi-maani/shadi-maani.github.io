@@ -37,11 +37,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
+    <!-- Preload critical font -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;700&display=swap">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Devicon (Tech Icons) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    <!-- Devicon (Tech Icons) — deferred, not needed for first paint -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"></noscript>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -85,7 +89,7 @@
     <main class="site-main" id="main-content">
 
         <!-- ===== Hero ===== -->
-        <section class="hero reveal" aria-labelledby="hero-heading">
+        <section class="hero" aria-labelledby="hero-heading">
             <h1 id="hero-heading" class="hero-title">
                 <span data-i18n="hero-title-1">شادي معاني.</span><br>
                 <span data-i18n="hero-title-2">مهندس برمجيات · DevOps · أنظمة ذكاء اصطناعي.</span>
