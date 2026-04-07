@@ -12,7 +12,7 @@
 
 This repository contains the source code for my professional technical portfolio. It is built from scratch strictly using HTML5, Vanilla CSS, and modular JavaScript without relying on any heavy frameworks (like React/Angular) or utility-first CSS libraries (like Tailwind). The primary focus is **absolute performance**, **first-class Arabic (RTL) support**, and **SEO dominance**.
 
-![Deployment](https://github.com/shadi-maani/shadi-maani.github.io/actions/workflows/pages.yml/badge.svg)
+![Deployment](https://github.com/shadi-maani/shadi-maani.github.io/actions/workflows/static.yml/badge.svg)
 ![Lighthouse Performance](https://img.shields.io/badge/Performance-100-success)
 ![Security-Scan](https://img.shields.io/badge/Security-Clean-blue)
 
@@ -41,6 +41,16 @@ Extensive engineering went into achieving high Lighthouse scores and search engi
    * **JSON-LD Structured Data:** Embedded Schema.org data for the `Person` type, detailing roles, skills, and links (GitHub, email) for rich Google search results.
    * **Cloudflare Email Obfuscation Fix:** Dynamically injecting `mailto:` links via JS to prevent Cloudflare from injecting its render-blocking `email-decode.min.js` onto the page.
 
+## 🛡️ Security Hardening
+
+In alignment with production-grade security standards, the following measures are implemented:
+
+* **DNSSEC:** Fully enabled and signed to prevent DNS spoofing, hijacking, and cache poisoning.
+* **Subresource Integrity (SRI):** External assets (e.g., `devicon.min.css`) are loaded with cryptographic hashes to ensure third-party scripts haven't been tampered with.
+* **Automated Security Scanning:** Integrated **Gitleaks** to prevent credential leakage and **Dependabot** for automated vulnerability tracking in dependencies.
+* **Edge Security:** Leveraging **Cloudflare WAF** and SSL/TLS 1.3 termination to mitigate DDoS threats and ensure encrypted transit.
+* **Proactive Obfuscation:** Custom DOM injection for sensitive links (email/phone) to thwart automated scrapers without adding render-blocking overhead.
+
 ## 🔐 Infrastructure, Deployment & Security
 
 The site is deployed via **GitHub Pages** with a custom domain (`shadimaani.me`), proxied through **Cloudflare** for edge caching and SSL termination.
@@ -48,20 +58,3 @@ The site is deployed via **GitHub Pages** with a custom domain (`shadimaani.me`)
 * **DNS & Routing:** Managed via Cloudflare (`zita.ns.cloudflare.com`, `santino.ns.cloudflare.com`).
 * **DNSSEC:** Enabled and signed, preventing DNS spoofing and cache poisoning.
 * **SSL/TLS:** Handled automatically by Cloudflare with HTTP/2 enabled.
-
-## 🛠️ Local Development
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/shadi-maani/shadi-maani.github.io.git
-   ```
-2. Navigate into the directory and serve it (e.g., using Python):
-   ```bash
-   cd shadi-maani.github.io
-   python3 -m http.server 8000
-   ```
-3. Open `http://localhost:8000` in your browser.
-
-## 📄 License & Copyright
-
-Copyright © 2026 Shadi Maani. All rights reserved.
