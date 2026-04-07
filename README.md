@@ -11,7 +11,7 @@
 ## 🚀 Overview
 
 This repository contains the source code for my professional technical portfolio. It is built from scratch strictly using HTML5, Vanilla CSS, and modular JavaScript without relying on any heavy frameworks (like React/Angular) or utility-first CSS libraries (like Tailwind). The primary focus is **absolute performance**, **first-class Arabic (RTL) support**, and **SEO dominance**.
-![Deployment](https://img.shields.io/github/actions/workflow/status/shadi-maani/shadi-maani.github.io/static.yml?label=Deployment&style=for-the-badge)
+![Deployment](https://img.shields.io/github/actions/workflow/status/shadi-maani/shadi-maani.github.io/static.yml?style=for-the-badge&label=Deployment)
 ![Lighthouse Performance](https://img.shields.io/badge/Performance-100-success)
 ![Security-Scan](https://img.shields.io/badge/Security-Clean-blue)
 
