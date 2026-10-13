@@ -6,12 +6,6 @@ export const socials = [
     darkIcon: "/social/github-dark.svg",
   },
   {
-    name: "Wellfound",
-    href: "https://wellfound.com/u/shadi-maani-1",
-    icon: "/social/wellfound.svg",
-    darkIcon: "/social/wellfound-dark.svg",
-  },
-  {
     name: "Email",
     href: "mailto:contact@shadimaani.me",
     icon: "/social/email.svg",

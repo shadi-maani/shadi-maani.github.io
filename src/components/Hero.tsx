@@ -1,4 +1,4 @@
-import { BadgeCheck, BookText, ChevronRight } from "lucide-react";
+import { BadgeCheck, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import TechIcon from "./helpers/TechIcon";
 import { skills } from "@/data/tech";
@@ -111,20 +111,6 @@ const Hero = () => {
               <Button size="lg">
                 Get in Touch
                 <ChevronRight strokeWidth={2.25} />
-              </Button>
-            </a>
-            <a
-              href="https://wellfound.com/u/shadi-maani-1"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="bg-card text-foreground border-dashed cursor-pointer"
-              >
-                Resume
-                <BookText />
               </Button>
             </a>
           </div>
