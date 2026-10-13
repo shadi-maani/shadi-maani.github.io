@@ -185,8 +185,8 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 
-  --animate-marquee-left: marquee-left 20s linear infinite;
-  --animate-marquee-right: marquee-right 20s linear infinite;
+  --animate-marquee-left: marquee-left 60s linear infinite;
+  --animate-marquee-right: marquee-right 60s linear infinite;
 }
 
 @layer base {
