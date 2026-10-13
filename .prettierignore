@@ -11,3 +11,4 @@ sitemap.xml
 docs
 AGENTS.md
 CLAUDE.md
+*.sarif
