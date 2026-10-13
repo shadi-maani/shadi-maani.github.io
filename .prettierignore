@@ -1,0 +1,13 @@
+dist
+node_modules
+public
+package-lock.json
+bun.lock
+sitemap.xml
+.agents
+.claude
+.scratch
+.playwright-mcp
+docs
+AGENTS.md
+CLAUDE.md

@@ -1,0 +1,117 @@
+name: CI/CD
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+concurrency:
+  group: "ci-${{ github.ref }}"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan for leaked secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Dependency review
+        if: github.event_name == 'pull_request'
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Format check
+        run: npm run format:check
+
+      - name: TypeScript check
+        run: npx tsc -b
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Security audit
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Build (without sitemap)
+        run: npm run ci
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || '' }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || '' }}
+
+      - name: Verify build output
+        run: |
+          echo "✅ Build output:"
+          find dist/ -type f | wc -l | xargs echo "  Files:"
+          du -sh dist/ | awk '{print "  Total: " $1}'
+          MAIN_JS=$(ls -1 dist/assets/index-*.js 2>/dev/null | head -1)
+          if [ -n "$MAIN_JS" ]; then
+            SIZE=$(wc -c < "$MAIN_JS")
+            echo "  Main JS: $(numfmt --to=iec $SIZE)"
+          fi
+
+  deploy:
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (with sitemap)
+        run: npm run build
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
+      - name: Copy 404.html for SPA routing
+        run: cp dist/index.html dist/404.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
