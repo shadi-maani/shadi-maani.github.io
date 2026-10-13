@@ -33,7 +33,10 @@ const Blog = () => {
 
   return (
     <>
-      <SEO title="Blogs | Shadi Maani" description="Thoughts, tutorials, and insights on software engineering, web development, and more." />
+      <SEO
+        title="Blogs | Shadi Maani"
+        description="Thoughts, tutorials, and insights on software engineering, web development, and more."
+      />
       <main className="mx-auto flex w-full max-w-3xl flex-col px-6 pt-6 pb-8 sm:pt-12 sm:pb-12 space-y-6">
         <FadeIn yOffset={10} duration={0.4}>
           <button
@@ -43,7 +46,7 @@ const Blog = () => {
             <ChevronLeft size={20} strokeWidth={2.25} /> Back to Home
           </button>
         </FadeIn>
-        
+
         <FadeIn
           delay={0.1}
           yOffset={15}

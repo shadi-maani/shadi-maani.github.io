@@ -60,10 +60,10 @@ const ProjectDetail = () => {
 
   return (
     <>
-      <SEO 
-        title={`${project.name} | Shadi Maani`} 
-        description={project.description} 
-        image={safeImgSrc || "https://shadimaani.me/og-image.jpg"} 
+      <SEO
+        title={`${project.name} | Shadi Maani`}
+        description={project.description}
+        image={safeImgSrc || "https://shadimaani.me/og-image.jpg"}
       />
       <main className="mx-auto flex w-full max-w-3xl flex-col px-6 pt-6 pb-16 sm:pt-12 sm:pb-24 space-y-6">
         <FadeIn yOffset={10} duration={0.4}>
@@ -122,15 +122,19 @@ const ProjectDetail = () => {
               Technologies Used
             </h2>
             <div className="flex flex-wrap items-center gap-2 mt-2">
-              {project.tech_stack && project.tech_stack.map((tech) => (
-                <span
-                  key={tech.name}
-                  className="bg-card ml-1 inline-flex items-center gap-1.5 rounded-md border border-dashed px-1 py-2 text-xs text-foreground sm:px-3.5 sm:text-sm"
-                >
-                  <TechIcon item={tech} className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                  {tech.name}
-                </span>
-              ))}
+              {project.tech_stack &&
+                project.tech_stack.map((tech) => (
+                  <span
+                    key={tech.name}
+                    className="bg-card ml-1 inline-flex items-center gap-1.5 rounded-md border border-dashed px-1 py-2 text-xs text-foreground sm:px-3.5 sm:text-sm"
+                  >
+                    <TechIcon
+                      item={tech}
+                      className="h-3.5 w-3.5 sm:h-4 sm:w-4"
+                    />
+                    {tech.name}
+                  </span>
+                ))}
             </div>
           </FadeIn>
           <FadeIn delay={0.3}>

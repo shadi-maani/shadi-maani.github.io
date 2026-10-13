@@ -82,14 +82,13 @@ const Hero = () => {
           <p className="text-base font-light leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             I am a self-taught security researcher focused on application and
             AI/LLM security.
-            <br />
-            I reported a vulnerability to Perplexity AI that
-            was accepted and resolved and I run the vulnerability disclosure
-            program for SYNC NGO's AI recruitment platform that handles candidate data.
-            On the engineering side I designed and shipped Thimma on my own as
-            an AI-powered backend on GCP with a security-first pipeline that
-            includes SAST, SCA, container scanning and keyless deploys. I
-            also build Arabic-first frontends in Flutter and Dart when a project
+            <br />I reported a vulnerability to Perplexity AI that was accepted
+            and resolved and I run the vulnerability disclosure program for SYNC
+            NGO's AI recruitment platform that handles candidate data. On the
+            engineering side I designed and shipped Thimma on my own as an
+            AI-powered backend on GCP with a security-first pipeline that
+            includes SAST, SCA, container scanning and keyless deploys. I also
+            build Arabic-first frontends in Flutter and Dart when a project
             needs it. My main tools are{" "}
             <span className="inline items-center gap-2 align-middle">
               {skills.map((skill) => (
@@ -109,9 +108,7 @@ const Hero = () => {
 
           <div className="flex flex-wrap gap-3 sm:gap-4 pt-2">
             <a href="/contact">
-              <Button
-                size="lg"
-              >
+              <Button size="lg">
                 Get in Touch
                 <ChevronRight strokeWidth={2.25} />
               </Button>

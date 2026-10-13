@@ -3,12 +3,23 @@ import { ArrowUpRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { sanitizeImageUrl } from "@/lib/sanitize";
 
-const BlogCard = ({ title, description, tags, date, read_time, slug, image_url }: DatabaseBlog) => {
+const BlogCard = ({
+  title,
+  description,
+  tags,
+  date,
+  read_time,
+  slug,
+  image_url,
+}: DatabaseBlog) => {
   const safeImageUrl = sanitizeImageUrl(image_url);
   return (
     <div className="flex flex-col gap-3 bg-card border border-dashed border-border/80 p-4 sm:p-5 rounded-xl w-full overflow-hidden">
       {safeImageUrl && (
-        <Link to={`/blogs/${slug}`} className="w-full h-48 sm:h-56 mb-2 overflow-hidden rounded-lg border border-dashed border-border/50">
+        <Link
+          to={`/blogs/${slug}`}
+          className="w-full h-48 sm:h-56 mb-2 overflow-hidden rounded-lg border border-dashed border-border/50"
+        >
           <img
             src={safeImageUrl}
             alt={title}
@@ -42,14 +53,15 @@ const BlogCard = ({ title, description, tags, date, read_time, slug, image_url }
         {description}
       </p>
       <div className="flex flex-wrap gap-2 mt-1">
-        {tags && tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded-md border border-dashed border-border/70 bg-background px-2 py-0.5 font-mono text-[10px] sm:text-xs text-muted-foreground"
-          >
-            {tag}
-          </span>
-        ))}
+        {tags &&
+          tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-md border border-dashed border-border/70 bg-background px-2 py-0.5 font-mono text-[10px] sm:text-xs text-muted-foreground"
+            >
+              {tag}
+            </span>
+          ))}
       </div>
     </div>
   );

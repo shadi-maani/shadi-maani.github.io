@@ -32,11 +32,9 @@ const BlogSection = () => {
   return (
     <section id="blogs" className="w-full space-y-6">
       <div className="flex gap-3">
-        <p className="text-2xl font-light tracking-tight sm:text-3xl">
-          Blogs
-        </p>
+        <p className="text-2xl font-light tracking-tight sm:text-3xl">Blogs</p>
       </div>
-      
+
       {loading ? (
         <div className="flex justify-center py-8">
           <Loader2 className="w-6 h-6 animate-spin text-muted-foreground" />
@@ -44,11 +42,11 @@ const BlogSection = () => {
       ) : (
         <div className="flex flex-col gap-4">
           {blogs.length > 0 ? (
-            blogs.map((blog) => (
-              <BlogCard key={blog.id} {...blog} />
-            ))
+            blogs.map((blog) => <BlogCard key={blog.id} {...blog} />)
           ) : (
-            <p className="text-muted-foreground font-light">No blogs published yet.</p>
+            <p className="text-muted-foreground font-light">
+              No blogs published yet.
+            </p>
           )}
         </div>
       )}

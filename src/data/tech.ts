@@ -47,11 +47,17 @@ export const offensiveSkills: TechItem[] = [
 
 export const backendSkills: TechItem[] = [
   { name: "Python", icon: `${icons}/python/python-original.svg` },
-  { name: "Google Cloud", icon: `${icons}/googlecloud/googlecloud-original.svg` },
+  {
+    name: "Google Cloud",
+    icon: `${icons}/googlecloud/googlecloud-original.svg`,
+  },
   { name: "Cloud Run", icon: `${icons}/googlecloud/googlecloud-original.svg` },
   { name: "API Gateway", icon: glyph("#4285F4", paths.globe) },
   { name: "IAM", icon: glyph("#F59E0B", paths.key) },
-  { name: "Workload Identity Federation", icon: glyph("#10B981", paths.shield) },
+  {
+    name: "Workload Identity Federation",
+    icon: glyph("#10B981", paths.shield),
+  },
   { name: "Docker", icon: `${icons}/docker/docker-original.svg` },
   { name: "CI/CD", icon: `${icons}/githubactions/githubactions-original.svg` },
   { name: "FastAPI", icon: `${icons}/fastapi/fastapi-original.svg` },
@@ -66,7 +72,10 @@ export const backendSkills: TechItem[] = [
 export const systemsSkills: TechItem[] = [
   { name: "Linux", icon: `${icons}/linux/linux-original.svg` },
   { name: "Bash", icon: `${icons}/bash/bash-original.svg` },
-  { name: "AWS", icon: `${icons}/amazonwebservices/amazonwebservices-original-wordmark.svg` },
+  {
+    name: "AWS",
+    icon: `${icons}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  },
   { name: "Networking", icon: glyph("#06B6D4", paths.wifi) },
   { name: "Pytest", icon: `${icons}/pytest/pytest-original.svg` },
   { name: "Git", icon: `${icons}/git/git-original.svg` },
@@ -76,7 +85,11 @@ export const systemsSkills: TechItem[] = [
     darkIcon: "/social/github-dark.svg",
   },
   { name: "Gradle", icon: `${icons}/gradle/gradle-original.svg` },
-  { name: "Vercel", icon: "/tech/vercel-light.svg", darkIcon: "/tech/vercel-dark.svg" },
+  {
+    name: "Vercel",
+    icon: "/tech/vercel-light.svg",
+    darkIcon: "/tech/vercel-dark.svg",
+  },
   { name: "Netlify", icon: `${icons}/netlify/netlify-original.svg` },
   { name: "NPM", icon: `${icons}/npm/npm-original-wordmark.svg` },
 ];
@@ -90,9 +103,17 @@ export const frontendSkills: TechItem[] = [
   { name: "CSS", icon: `${icons}/css3/css3-original.svg` },
 ];
 
-export const skillRows: { direction: "left" | "right"; category: string; items: TechItem[] }[] = [
+export const skillRows: {
+  direction: "left" | "right";
+  category: string;
+  items: TechItem[];
+}[] = [
   { direction: "left", category: "Security", items: securitySkills },
-  { direction: "right", category: "Offensive / Research", items: offensiveSkills },
+  {
+    direction: "right",
+    category: "Offensive / Research",
+    items: offensiveSkills,
+  },
   { direction: "left", category: "Backend & Cloud", items: backendSkills },
   { direction: "right", category: "Tools & Systems", items: systemsSkills },
   { direction: "left", category: "Frontend", items: frontendSkills },

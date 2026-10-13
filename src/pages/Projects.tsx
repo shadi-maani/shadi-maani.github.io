@@ -29,7 +29,10 @@ const Projects = () => {
 
   return (
     <>
-      <SEO title="Projects | Shadi Maani" description="Explore my latest work, including web applications, open source tools, and side projects." />
+      <SEO
+        title="Projects | Shadi Maani"
+        description="Explore my latest work, including web applications, open source tools, and side projects."
+      />
       <main className="mx-auto flex w-full max-w-3xl flex-col px-6 pt-6 pb-8 sm:pt-12 sm:pb-12 space-y-6">
         <FadeIn yOffset={10} duration={0.4}>
           <button
@@ -39,7 +42,7 @@ const Projects = () => {
             <ChevronLeft size={20} strokeWidth={2.25} /> Back to Home
           </button>
         </FadeIn>
-        
+
         <FadeIn
           delay={0.1}
           yOffset={15}
@@ -50,8 +53,9 @@ const Projects = () => {
             All Projects
           </h1>
           <p className="text-muted-foreground font-light text-lg">
-            A collection of my recent work, side projects, and experiments. Built
-            from scratch with a focus on clean code and great user experiences.
+            A collection of my recent work, side projects, and experiments.
+            Built from scratch with a focus on clean code and great user
+            experiences.
           </p>
         </FadeIn>
 

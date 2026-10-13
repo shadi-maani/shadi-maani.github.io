@@ -8,12 +8,12 @@ interface SEOProps {
   type?: string;
 }
 
-const SEO = ({ 
-  title = "Shadi Maani | Software Engineer", 
-  description = "A collection of my recent work, side projects, and experiments. Built from scratch with a focus on clean code and great user experiences.", 
-  image = "https://shadimaani.me/og-image.jpg", 
+const SEO = ({
+  title = "Shadi Maani | Software Engineer",
+  description = "A collection of my recent work, side projects, and experiments. Built from scratch with a focus on clean code and great user experiences.",
+  image = "https://shadimaani.me/og-image.jpg",
   url = "https://shadimaani.me",
-  type = "website"
+  type = "website",
 }: SEOProps) => {
   return (
     <Helmet>

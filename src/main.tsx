@@ -41,7 +41,14 @@ createRoot(document.getElementById("root")!).render(
                   <Route path="/projects/:slug" element={<ProjectDetail />} />
                   <Route path="/blogs/:slug" element={<BlogDetail />} />
                   <Route path="/contact" element={<Contact />} />
-                  <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
+                  <Route
+                    path="/admin"
+                    element={
+                      <ProtectedRoute>
+                        <Admin />
+                      </ProtectedRoute>
+                    }
+                  />
                 </Routes>
               </div>
               <Footer />

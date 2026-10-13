@@ -31,7 +31,9 @@ const ProjectCard = ({
         ) : (
           <div className="flex flex-col items-center justify-center gap-2 text-muted-foreground/50 border border-dashed border-border/40 w-full h-full rounded-lg">
             <LuImage className="w-8 h-8" />
-            <span className="text-xs font-mono uppercase tracking-widest">No Image</span>
+            <span className="text-xs font-mono uppercase tracking-widest">
+              No Image
+            </span>
           </div>
         )}
       </div>
@@ -49,7 +51,9 @@ const ProjectCard = ({
             <TechIcon key={tech.name} item={tech} className="w-5 h-5" />
           ))
         ) : (
-          <span className="text-[10px] font-mono text-muted-foreground uppercase bg-muted/50 px-2 rounded-md border border-border/50 h-full flex items-center">No Tech Stack specified</span>
+          <span className="text-[10px] font-mono text-muted-foreground uppercase bg-muted/50 px-2 rounded-md border border-border/50 h-full flex items-center">
+            No Tech Stack specified
+          </span>
         )}
       </div>
 
@@ -73,9 +77,7 @@ const ProjectCard = ({
           )}
         </div>
         <p className="text-xs font-mono text-muted-foreground hover:text-foreground cursor-pointer transition-colors uppercase tracking-widest">
-          <Link to={`/projects/${slug}`}>
-            Details →
-          </Link>
+          <Link to={`/projects/${slug}`}>Details →</Link>
         </p>
       </div>
     </div>

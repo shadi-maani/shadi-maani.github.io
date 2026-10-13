@@ -1,4 +1,6 @@
-export function sanitizeImageUrl(url: string | null | undefined): string | null {
+export function sanitizeImageUrl(
+  url: string | null | undefined,
+): string | null {
   if (!url) return null;
   if (url.startsWith("/") || url.startsWith("data:")) return url;
   try {
